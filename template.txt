@@ -1,0 +1,13 @@
+server {
+    listen 80;
+    listen [::] 80;
+
+    root <build_directory>;
+    server_name <server_name>;
+
+    index index.html;
+    
+    location /{
+        try_files $uri $uri/ =404;
+    };
+}
